@@ -40,11 +40,11 @@ int main () {
 	
 		if (i != 0) {
 
-			cpercentages    = base_command + std::to_string (percentage[i]) + "' >> percentages";
-			cmembers        = base_command + std::to_string (members[i]) + "' >> members";
-			cdp             = base_command + std::to_string (delta_percentage[i-1]) + "' >> dp";
-			cdm             = base_command + std::to_string (delta_members[i-1]) + "' >> dm";
-			cspeeches	= base_command + std::to_string (speeches[i]) + "' >> speeches";
+			cpercentages    = base_command + std::to_string (percentage[i]) + "' >> work_files/percentages";
+			cmembers        = base_command + std::to_string (members[i]) + "' >> work_files/members";
+			cdp             = base_command + std::to_string (delta_percentage[i-1]) + "' >> work_files/dp";
+			cdm             = base_command + std::to_string (delta_members[i-1]) + "' >> work_files/dm";
+			cspeeches	= base_command + std::to_string (speeches[i]) + "' >> work_files/speeches";
 
 			system (cpercentages.c_str ());
 			system (cmembers.c_str ());
@@ -54,9 +54,9 @@ int main () {
 
 		} else {
 
-			cpercentages    = base_command + std::to_string (percentage[i]) + "' >> percentages";
-			cmembers        = base_command + std::to_string (members[i]) + "' >> members";
-			cspeeches	= base_command + std::to_string (speeches[i]) + "' >> speeches";
+			cpercentages    = base_command + std::to_string (percentage[i]) + "' >> work_files/percentages";
+			cmembers        = base_command + std::to_string (members[i]) + "' >> work_files/members";
+			cspeeches	= base_command + std::to_string (speeches[i]) + "' >> work_files/speeches";
 
 			system (cpercentages.c_str ());
                         system (cmembers.c_str ());

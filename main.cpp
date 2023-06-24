@@ -19,7 +19,7 @@ int main () {
 	t.raw_line	= "";
 	t.data		= "";
 
-	std::ifstream meetings_links ("meetings_links");
+	std::ifstream meetings_links ("meetings/meetings_links");
 
 	while (std::getline (meetings_links, t.link)) {
 
@@ -34,7 +34,7 @@ int main () {
 
 		std::getline (meetings_links, t.link);
 		
-		t.command1 = "w3m -dump https://tmclub.eu/" + t.link + " | grep '  Member (' >> raw_data";
+		t.command1 = "w3m -dump https://tmclub.eu/" + t.link + " | grep '  Member (' >> data/raw_data";
 		system (t.command1.c_str ());
 
 		std::cout << "(Task 1 of 2)   " << i + 1 << "/" << t.line_counter << "   (" << (i + 1) * 100 / t.line_counter << "%)" << std::endl;
@@ -69,14 +69,16 @@ int main () {
 			t.command2 = t.command2 + t.raw_line[j+k];
 		}	
 		
-		t.command2 = t.command2 + "   ' >> club_stats;";
+		t.command2 = t.command2 + "   ' >> data/club_stats;";
 		system (t.command2.c_str ());
+		// This is debug output to the terminal
 		//std::cout << t.command2 << std::endl << std::endl;
 
 
 		std::getline (meetings_links, t.link);
-		t.command3 = "w3m -dump https://tmclub.eu/" + t.link + " | grep -c ' Speaker' >> club_stats;";
+		t.command3 = "w3m -dump https://tmclub.eu/" + t.link + " | grep -c ' Speaker' >> data/club_stats;";
 		system (t.command3.c_str ());
+		// This is debug output to the terminal
 		//std::cout << t.command3 << std::endl << std::endl;
 
 		std::cout << "(Task 2 of 2)   " << i + 1 << "/" << t.line_counter << "   (" << (i + 1) * 100 / t.line_counter << "%)" << std::endl;
