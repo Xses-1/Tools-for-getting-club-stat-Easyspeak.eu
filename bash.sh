@@ -1,3 +1,5 @@
+#!/bin/bash
+
 cat meeting_list.php | grep view_meeting.php?t= >> meetings_links
 
 
