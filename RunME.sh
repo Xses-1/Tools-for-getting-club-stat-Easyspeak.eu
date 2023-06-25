@@ -18,4 +18,9 @@ cat data/club_stats | ./processor.o
 # much easier to read in interpret. The only data that don't have
 # to be filtered because it's already not changing drastically enough
 # for it to make nay difference is the amount of member and its change.
+cat data_processor/work_files/percentages | ./filter.o >> filtered_attendance
+cat data_processor/work_files/speeches | ./filter.o >> filtered_speeches
+cat data_processor/work_files/dp | ./filter.o >> filtered_change_attendance
 
+# This is just cleaning of the executable files
+make clean

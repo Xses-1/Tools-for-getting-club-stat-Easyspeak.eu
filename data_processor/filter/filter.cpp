@@ -10,7 +10,7 @@ int main () {
 	long double y  = 0;
 
 	std::string strlength;
-	stdlength = "";
+	strlength = "";
 
 
 	/***** 30 - Sample rate (Hz); 1.2 - Fc (Hz); 0.66 - Q; 0 - Gain (dB); ****/
@@ -66,13 +66,15 @@ int main () {
 
 	// std::cout << "Repetitions:" << std::endl;
 	// std::cin >> rep;
+	
+	rep = 1;
 	std::ifstream meetings_amount ("data/meetings_amount");
 	std::getline (meetings_amount, strlength);
- 	rep = std::stoi(strlength);
+ 	DataLen = std::stoi(strlength);
  	meetings_amount.close();
 
-	std::cout << "Data length:" << std::endl;
-	std::cin >> DataLen;
+	//std::cout << "Data length:" << std::endl;
+	//std::cin >> DataLen;
 
 	int32_t    in[DataLen];
         long double out[DataLen];
@@ -108,11 +110,13 @@ int main () {
 		}
 	}
 
-
+	
+	/*
 	std::cout << std::endl <<
 	"---------------------------------------------------------------------------"
 	"---------------------------------------------------------------------------"
 	<< std :: endl  << std::endl;
+	*/
 
 	for (int i = 0; i < DataLen; i++) {
 
