@@ -12,4 +12,7 @@ And naturally every spreadsheet program can calculate predicitons and avereages 
 
 Here are some examples:
 
-
+<img src="https://github.com/Xses-1/Tools-for-getting-club-stat-Easyspeak.eu/blob/main/pictures/chart1.png">
+</br>
+<img src="https://github.com/Xses-1/Tools-for-getting-club-stat-Easyspeak.eu/blob/main/pictures/chart2.png">
+</br>
