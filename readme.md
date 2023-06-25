@@ -47,7 +47,9 @@ Don't forget to select "remember me" field. Our programs will use that to acess 
 
 
 Finally, just run RunME.sh and everything should happen automatically. Your data will be output to the files in the main directory (filtered output) and in data_processor/work_file (nonfiltered output). These data can be easily copy pasted to your favourite spreadsheet editor.
-
+```
+./RunME.sh
+```
 
 
 
