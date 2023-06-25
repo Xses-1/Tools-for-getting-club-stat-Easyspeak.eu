@@ -9,9 +9,13 @@ int main () {
 	long double s2 = 0;
 	long double y  = 0;
 
+	std::string strlength;
+	stdlength = "";
+
 
 	/***** 30 - Sample rate (Hz); 1.2 - Fc (Hz); 0.66 - Q; 0 - Gain (dB); ****/
 
+	// Different parameters for different settings of the biquad filter
 	/*
 	long double a0 =  0.013218108833849065;
 	long double a1 =  0.026436217667698130;
@@ -60,8 +64,12 @@ int main () {
 	*/
 
 
-	std::cout << "Repetitions:" << std::endl;
-	std::cin >> rep;
+	// std::cout << "Repetitions:" << std::endl;
+	// std::cin >> rep;
+	std::ifstream meetings_amount ("data/meetings_amount");
+	std::getline (meetings_amount, strlength);
+ 	rep = std::stoi(strlength);
+ 	meetings_amount.close();
 
 	std::cout << "Data length:" << std::endl;
 	std::cin >> DataLen;

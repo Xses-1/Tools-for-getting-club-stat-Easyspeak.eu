@@ -11,7 +11,7 @@ struct things {
 
 int main () {
 
-	std::ifstream meetings_links ("/home/xses/Documents/Programming/c++/tmlcub_club_stats_analysis_tool/meetings_links");
+	std::ifstream meetings_links ("meetings_links");
 
 	t.line_counter = 0;
 

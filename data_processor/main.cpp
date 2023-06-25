@@ -4,11 +4,20 @@ int main () {
 
 	std::vector<int> index, attenders, members, speeches, percentage, delta_percentage, delta_members;
 	int old_percentage, old_members, length, temp1, temp2, temp3, temp4;
-	std::string base_command, cpercentages, cmembers, cdp, cdm, cspeeches;
+	std::string base_command, cpercentages, cmembers, cdp, cdm, cspeeches, strlength;
 
 	base_command = "echo '";
 
-	std::cin >> length;
+	//std::cin >> length;
+	
+	std::ifstream meetings_amount ("data/meetings_amount");
+	std::getline (meetings_amount, strlength);
+	length = std::stoi(strlength);
+	meetings_amount.close();
+
+	std::cout << std::endl;
+	std::cout << length << std::endl;
+	std::cout << std::endl;
 
 	for (int i = 0; i < length; i++) {
 
@@ -40,11 +49,11 @@ int main () {
 	
 		if (i != 0) {
 
-			cpercentages    = base_command + std::to_string (percentage[i]) + "' >> work_files/percentages";
-			cmembers        = base_command + std::to_string (members[i]) + "' >> work_files/members";
-			cdp             = base_command + std::to_string (delta_percentage[i-1]) + "' >> work_files/dp";
-			cdm             = base_command + std::to_string (delta_members[i-1]) + "' >> work_files/dm";
-			cspeeches	= base_command + std::to_string (speeches[i]) + "' >> work_files/speeches";
+			cpercentages    = base_command + std::to_string (percentage[i]) + "' >> data_processor/work_files/percentages";
+			cmembers        = base_command + std::to_string (members[i]) + "' >> data_processor/work_files/members";
+			cdp             = base_command + std::to_string (delta_percentage[i-1]) + "' >> data_processor/work_files/dp";
+			cdm             = base_command + std::to_string (delta_members[i-1]) + "' >> data_processor/work_files/dm";
+			cspeeches	= base_command + std::to_string (speeches[i]) + "' >> data_processor/work_files/speeches";
 
 			system (cpercentages.c_str ());
 			system (cmembers.c_str ());
@@ -54,9 +63,9 @@ int main () {
 
 		} else {
 
-			cpercentages    = base_command + std::to_string (percentage[i]) + "' >> work_files/percentages";
-			cmembers        = base_command + std::to_string (members[i]) + "' >> work_files/members";
-			cspeeches	= base_command + std::to_string (speeches[i]) + "' >> work_files/speeches";
+			cpercentages    = base_command + std::to_string (percentage[i]) + "' >> data_processor/work_files/percentages";
+			cmembers        = base_command + std::to_string (members[i]) + "' >> data_processor/work_files/members";
+			cspeeches	= base_command + std::to_string (speeches[i]) + "' >> data_processor/work_files/speeches";
 
 			system (cpercentages.c_str ());
                         system (cmembers.c_str ());
