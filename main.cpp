@@ -27,6 +27,9 @@ int main () {
 		//t.line_counter = 3;
 	}
 
+	t.command0 = "echo " + std::to_string(t.line_counter) + " >> /data/meetings_amount";
+	system (t.command0.c_str ());
+
 	meetings_links.clear ();
         meetings_links.seekg (0, std::ios::beg);
 
